@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
                
 
                 isTouch = true;
-                isCollider = false;
+                
             }
         }
         else
@@ -68,25 +68,20 @@ public class Player : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("RightRotateIdle"))
-        {
-            if (isTouch)
-            {
-                //isCollider = true;
-            transform.rotation = Quaternion.Inverse(transform.rotation);
-
-            }
-        }
+        
 
         if (collision.gameObject.CompareTag("Bounds"))
         {
            // GM.instance.target.SetActive(true);
-            if (!isTouch)
-            {
+           
             rotationTemp = Quaternion.Inverse(transform.rotation);
             transform.rotation = new Quaternion();
 
-            }
+            
+        }
+        if (collision.gameObject.CompareTag("Clumb"))
+        {
+            //Todo:gameisover
         }
     }
 }

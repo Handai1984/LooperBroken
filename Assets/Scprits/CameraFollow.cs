@@ -6,8 +6,13 @@ public class CameraFollow : MonoBehaviour {
 
     public Transform player;
 
-    private void Update()
+    private void LateUpdate()
     {
-        transform.position = new Vector3(transform.position.x, player.position.y, transform.position.z);
+        Vector3 temp= new Vector3(transform.position.x, player.position.y, transform.position.z);
+
+        transform.position = Vector3.Lerp(transform.position, temp,10* Time.deltaTime);
+
     }
+
+    
 }

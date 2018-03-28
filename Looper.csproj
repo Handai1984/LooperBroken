@@ -294,9 +294,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorLinear.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorMove.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorSelf.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorSpherical.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\rotation.cs" />
     <Compile Include="Assets\Scprits\CameraFollow.cs" />
+    <Compile Include="Assets\Scprits\Clumb.cs" />
     <Compile Include="Assets\Scprits\GM.cs" />
     <Compile Include="Assets\Scprits\Player.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Particle Attractor by Moonflower Carnivore\Particle Attractor documentation.txt" />
+    <None Include="Assets\Particle Attractor by Moonflower Carnivore\Shaders\Particles Additive Intensify.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

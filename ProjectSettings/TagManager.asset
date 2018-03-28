@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RightRotateIdle
   - Bounds
+  - Clumb
   layers:
   - Default
   - TransparentFX
