@@ -302,6 +302,7 @@
     <Compile Include="Assets\Scprits\CameraFollow.cs" />
     <Compile Include="Assets\Scprits\Clumb.cs" />
     <Compile Include="Assets\Scprits\GM.cs" />
+    <Compile Include="Assets\Scprits\ObjectPool.cs" />
     <Compile Include="Assets\Scprits\Player.cs" />
   </ItemGroup>
   <ItemGroup>
