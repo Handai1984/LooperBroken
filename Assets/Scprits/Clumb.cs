@@ -10,7 +10,7 @@ public class Clumb : MonoBehaviour {
         if (collision.gameObject.CompareTag("Clumb"))
         {
            GM.instance.Delete(collision.transform.parent.gameObject.name,collision.transform.parent.gameObject);
-            print("我的名字是"+ collision.transform.parent.gameObject.ToString());
+//            print("我的名字是"+ collision.transform.parent.gameObject.ToString());
         }
         if (collision.gameObject.CompareTag("luzhang"))
         {

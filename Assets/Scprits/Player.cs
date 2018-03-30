@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
             GM.instance.isgameOver = true;
             GM.instance.reStartText.SetActive(true);
             gameObject.SetActive(false);
+			GM.instance.GADInterstitalShow ();//显示插屏
         }
 
     }
