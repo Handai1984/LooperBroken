@@ -106,6 +106,16 @@
      <Compile Include="Assets\Scprits\GM.cs" />
      <Compile Include="Assets\Scprits\ObjectPool.cs" />
      <Compile Include="Assets\Scprits\Player.cs" />
+     <Compile Include="Assets\Scprits\UMController.cs" />
+     <Compile Include="Assets\UmengAllinOneDemo\Entry.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Example\AnalyticsEntry.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Example\Dplus.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Example\GameExample.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Scripts\Analytics.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Scripts\DplusAgent.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Scripts\GA.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Scripts\SimpleJSON.cs" />
+     <Compile Include="Assets\UmengGameAnalytics\Scripts\UmengManager.cs" />
      <Compile Include="Assets\谷歌插件脚本\GoogleAD.cs" />
      <None Include="Assets\Particle Attractor by Moonflower Carnivore\Shaders\Particles Additive Intensify.shader" />
      <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
