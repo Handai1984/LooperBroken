@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Clumb"))
+        if (collision.gameObject.CompareTag("Clumb")||collision.gameObject.CompareTag ("luzhang"))
         {
             StopCoroutine(GM.instance.ClumbSpawns());
             //Todo:gameisover
