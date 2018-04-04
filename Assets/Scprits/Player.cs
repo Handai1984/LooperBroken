@@ -13,32 +13,45 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Vector3 a = new Vector3(1, 1, 1);
     public float angle;//设置旋转角度
+    private bool isbounds;
 
     private void Start()
     {
         isTouch = false;
-        rotationTemp = Quaternion.Euler(0, 0, angle);
+        isbounds = true;
     }
 
     private void Update()
     {
-        
-      
+
+
         if (GM.instance.isgameOver == false)
         {
-
-            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);//设置移动速度
-            
+            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime, Space.Self);//设置移动速度
+            if (!isbounds)
+            {
+                rotationTemp = Quaternion.Euler(0, 0, angle);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotationTemp, 1);
+            }
 
             if (Input.GetMouseButton(0))
             {
-                if (!isTouch)
+                if (!isTouch&&isbounds)
                 {
-
-                    //quaternion = Quaternion.Slerp(quaternion, rotationTemp, 50*Time.deltaTime);
-                    transform.rotation = rotationTemp;
-
-
+                    isbounds = false;
+                    if (angle > 0 && transform.position.x < 0)
+                    {
+                        transform.rotation = new Quaternion();
+                        angle = -angle;
+                        moveSpeed = 20f;
+                    }
+                    if (angle < 0 && transform.position.x > 0)
+                    {
+                        transform.rotation = new Quaternion();
+                        angle = -angle;
+                        moveSpeed = 20f;
+                    }
+                    //  moveSpeed = 10f;
                     isTouch = true;
 
                 }
@@ -49,8 +62,7 @@ public class Player : MonoBehaviour
                 {
 
 
-                    transform.rotation = Quaternion.Inverse(transform.rotation);
-                   
+                    // transform.rotation = Quaternion.Inverse(transform.rotation);
                     isTouch = false;
                 }
 
@@ -69,22 +81,26 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bounds"))
         {
-            rotationTemp = Quaternion.Inverse(transform.rotation);
+            // rotationTemp = Quaternion.Inverse(transform.rotation);
+            isbounds = true;
             transform.rotation = new Quaternion();
+            moveSpeed = 5f;
         }
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Clumb")||collision.gameObject.CompareTag ("luzhang"))
+        if ( collision.gameObject.CompareTag("luzhang"))
         {
-            StopCoroutine(GM.instance.ClumbSpawns());
+            //StopCoroutine(GM.instance.ClumbSpawns());
+            //StopCoroutine(GM.instance.HandrailSpawns());
+            //StopAllCoroutines();
             //Todo:gameisover
             GM.instance.isgameOver = true;
             GM.instance.reStartText.SetActive(true);
             gameObject.SetActive(false);
-			GM.instance.GADInterstitalShow ();//显示插屏
+            GM.instance.GADInterstitalShow();//显示插屏
         }
 
     }

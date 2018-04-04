@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class GM : MonoBehaviour
 {
 	public static GM instance;
-	public GameObject[] clumb;
-//柱子数组
-	public Transform spawnTransform;
+	public GameObject[] clumb;//柱子数组
+    public GameObject handdrail;//木板
+    public Transform[] handdrailTrans;//木板位置
+    public Transform spawnTransform;//柱子生成位置
 	private int keyCount;
 	public GameObject startText, reStartText;
 	public Text scoreText, highScoreText;
@@ -30,6 +31,7 @@ public class GM : MonoBehaviour
 
 	private void Awake ()
 	{
+
 		instance = this;
 		pools = new Dictionary<string, Stack<GameObject>> ();
 		isgameOver = true;
@@ -62,9 +64,17 @@ public class GM : MonoBehaviour
 		GADBannerShow ();
 	}
 
-    
+    private void Update()
+    {
+        if (isgameOver)
+        {
+            StopAllCoroutines();
+        }
+    }
 
-	private void PlayerInit ()//玩家初始化
+
+
+    private void PlayerInit ()//玩家初始化
 	{
 		player1.SetActive (true);
 		player2.SetActive (true);
@@ -90,7 +100,8 @@ public class GM : MonoBehaviour
 		highScoreText.transform.parent.gameObject.SetActive (false);
 		isgameOver = false;
 		startText.SetActive (false);
-		StartCoroutine (ClumbSpawns ());
+		StartCoroutine (ClumbSpawns ());//开始生产障碍
+        StartCoroutine(HandrailSpawns());//开始生成板子
 	}
 
 	public void AddScore ()
@@ -117,43 +128,53 @@ public class GM : MonoBehaviour
 
 	public    IEnumerator ClumbSpawns ()
 	{
-		yield return new WaitForSeconds (3f);
-		int count = 0;
-		float second = 3f;
-		while (true) { 
+		yield return new WaitForSeconds (2f);
+       
+		while (true) {
 
-			if (count > 10) {
-				second -= 0.5f;
-				count = 0;
-				if (second <= 1f) {
-					second = 1f;
-				}
-			}
-			int temp = Random.Range (0, keyCount + 1) % keyCount;
-			string a = clumb [temp].name + "(Clone)";
-//			print ("a的名字是" + a);
-			print (a.ToString ());
-			Creat (a, clumb [temp], spawnTransform.position, Quaternion.identity);
-			yield return new WaitForSeconds (second);
-			Creat (clumb [5].name + "(Clone)", clumb [5], spawnTransform.position, Quaternion.identity);
+            
+            int temp = Random.Range (0, keyCount + 1);
+            print("temp" + temp);
+            for (int i =temp; i < keyCount; i++)
+            {
+			string a = clumb [i].name + "(Clone)";
+			Creat (a, clumb [i], spawnTransform.position, clumb[i].transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+			Creat (clumb [temp].name + "(Clone)", clumb [temp], spawnTransform.position, clumb[temp].transform.rotation);
 			yield return new WaitForSeconds (1f);
-			count++;
-//			print (count);
-		}
+
+            }
+
+            
+        }
 
 
 	}
 
-	#endregion
+    public  IEnumerator HandrailSpawns()
+    {
+        yield return new WaitForSeconds(3f);
+        while (true)
+        {
+        
+            int rnd2 = Random.Range(0, handdrailTrans.Length);
+            Creat(handdrail.name + "(Clone)", handdrail, handdrailTrans[rnd2].position, Quaternion.identity);
+            yield return new WaitForSeconds(1.5f);
 
-	#region 对象池
+        }
 
-	/// <summary>
-	///   存进去
-	/// </summary>
-	/// <param name="str"></param>
-	/// <param name="go"></param>
-	public void Delete (string str, GameObject go)
+    }
+
+    #endregion
+
+    #region 对象池
+
+    /// <summary>
+    ///   存进去
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="go"></param>
+    public void Delete (string str, GameObject go)
 	{
 		go.SetActive (false);
 		pools [str].Push (go);
@@ -180,7 +201,7 @@ public class GM : MonoBehaviour
 				go = Instantiate (prefab, pos, qua);
 			}
 		} else {
-//			print ("没有发现" + str);
+			print ("没有发现" + str);
 			pools.Add (str, new Stack<GameObject> ());
 			go = Instantiate (prefab, pos, qua);
 		}
@@ -260,5 +281,7 @@ public class GM : MonoBehaviour
 		}
 	}
 			
+
+   
 
 }

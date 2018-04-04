@@ -17,10 +17,10 @@ public class admobdemo : MonoBehaviour {
     {
         
              ad = Admob.Instance();
-            ad.bannerEventHandler += onBannerEvent;
-            ad.interstitialEventHandler += onInterstitialEvent;
-            ad.rewardedVideoEventHandler += onRewardedVideoEvent;
-            ad.nativeBannerEventHandler += onNativeBannerEvent;
+            ad.BannerEventHandler += onBannerEvent;
+            ad.InterstitialEventHandler += onInterstitialEvent;
+            ad.RewardedVideoEventHandler += onRewardedVideoEvent;
+            ad.NativeBannerEventHandler += onNativeBannerEvent;
             ad.initAdmob("ca-app-pub-3940256099942544/2934735716", "ca-app-pub-3940256099942544/4411468910");//all id are admob test id,change those to your
            //ad.setTesting(true);//show test ad
             ad.setGender(AdmobGender.MALE);

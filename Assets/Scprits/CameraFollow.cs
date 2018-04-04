@@ -5,13 +5,25 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
     public Transform player;
-    public float speed = 1f;
-    private void Update()
+    private Vector3 tempPos;
+
+  private   void Start()
     {
-        Vector3 temp = new Vector3(transform.position.x, player.position.y + 3, transform.position.z);
+        tempPos = player.position - transform.position;
+    }
 
-        transform.position = Vector3.Lerp(transform.position, temp, Time.deltaTime);
+    private void LateUpdate()
+    {
 
+        Vector3 pos = player.position;
+        Vector3 temp = new Vector3(transform.position.x, player.position.y-tempPos.y , transform.position.z);
+
+       // temp = Vector3.Lerp(transform.position, temp, Time.deltaTime * 5f);
+
+
+            transform.position = temp;
+
+        
 
     }
     }

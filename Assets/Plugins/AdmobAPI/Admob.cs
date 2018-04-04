@@ -6,10 +6,10 @@ namespace admob
 	public class Admob {
         public delegate void AdmobEventHandler(string eventName, string msg);
 
-        public event AdmobEventHandler bannerEventHandler;
-        public event AdmobEventHandler interstitialEventHandler;
-        public event AdmobEventHandler rewardedVideoEventHandler;
-        public event AdmobEventHandler nativeBannerEventHandler;
+        public event AdmobEventHandler BannerEventHandler;
+        public event AdmobEventHandler InterstitialEventHandler;
+        public event AdmobEventHandler RewardedVideoEventHandler;
+        public event AdmobEventHandler NativeBannerEventHandler;
         private static Admob _instance;	
 	
 		public static Admob Instance()
