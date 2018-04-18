@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scprits/UMController.cs">
+    <Files>
+      <File FileName="Assets/Scprits/UMController.cs" Line="12" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/handai/Desktop/未完成项目/LooperBroken/Assets/Scprits/GM.cs" line="20" column="1" />
+      <Breakpoint file="/Users/handai/Desktop/未完成项目/LooperBroken/Assets/Scprits/UMController.cs" line="13" column="22" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

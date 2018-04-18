@@ -10,6 +10,7 @@ public class CameraFollow : MonoBehaviour {
   private   void Start()
     {
         tempPos = player.position - transform.position;
+
     }
 
     private void LateUpdate()

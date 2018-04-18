@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
     private Quaternion rotationTemp;
     Rigidbody2D rb;
-    Vector3 a = new Vector3(1, 1, 1);
+
     public float angle;//设置旋转角度
     private bool isbounds;
 
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
             GM.instance.isgameOver = true;
             GM.instance.reStartText.SetActive(true);
             gameObject.SetActive(false);
-            GM.instance.GADInterstitalShow();//显示插屏
+			GoogleGM.googlegm.GADInterstitalShow();//显示插屏
         }
 
     }

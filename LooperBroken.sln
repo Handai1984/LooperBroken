@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LooperBroken", "Assembly-CSharp.csproj", "{C3BA9132-B88A-3F73-6C6A-99FAC3E50F10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LooperBroken", "Assembly-CSharp-firstpass.csproj", "{9A3B9E85-2119-03E5-51E4-C2D6D7F976A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3BA9132-B88A-3F73-6C6A-99FAC3E50F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BA9132-B88A-3F73-6C6A-99FAC3E50F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BA9132-B88A-3F73-6C6A-99FAC3E50F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BA9132-B88A-3F73-6C6A-99FAC3E50F10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3B9E85-2119-03E5-51E4-C2D6D7F976A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3B9E85-2119-03E5-51E4-C2D6D7F976A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3B9E85-2119-03E5-51E4-C2D6D7F976A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3B9E85-2119-03E5-51E4-C2D6D7F976A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
